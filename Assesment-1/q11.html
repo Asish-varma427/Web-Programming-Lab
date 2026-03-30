@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Container for the two columns */
+        .container {
+            display: flex;
+            height: 100vh; /* full viewport height */
+        }
+        /* Left column */
+        .left-column {
+            width: 20%;
+            background-color: #f0f0f0;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        /* Right column */
+        .right-column {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        /* Top and bottom rows in right column */
+        .right-top {
+            height: 60%;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        .right-bottom {
+            height: 40%;
+            padding: 15px;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        h1, h2 {
+            margin-top: 10px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img src="profile.jpg" alt="Student Profile">
+            <h2>Contact Details</h2>
+            <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></p>
+            <p>Phone: +91-1234567890</p>
+            <p>Address: 123, Sample Street, City, India</p>
+
+            <h2>Skills</h2>
+            <p>HTML: Proficient in creating web pages</p>
+            <p>CSS: Styling and responsive design</p>
+            <p>JavaScript: DOM manipulation and interactivity</p>
+            <p>Python: Basic programming and scripting</p>
+
+            <h2>Personality Traits</h2>
+            <ul>
+                <li>Team Player</li>
+                <li>Quick Learner</li>
+                <li>Problem Solver</li>
+                <li>Adaptable and Flexible</li>
+            </ul>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Top row -->
+            <div class="right-top">
+                <h1>Asish Varma Uppalapati</h1>
+                <p>
+                    I am a passionate BTech student specializing in AI/ML with strong programming and problem-solving skills. 
+                    I enjoy developing innovative solutions and building projects that create impact.
+                </p>
+                <h2>Education</h2>
+                <ul>
+                    <li>BTech in Computer Science – VIT Vellore, 2025</li>
+                    <li>High School – XYZ School, 2021</li>
+                </ul>
+                <h2>Projects</h2>
+                <ul>
+                    <li>AI Notes App – Developed an AI-based notes organizer using Python</li>
+                    <li>Personal Portfolio Website – Designed a portfolio using HTML and CSS</li>
+                </ul>
+                <h2>Activities & Achievements</h2>
+                <ul>
+                    <li>Winner of Coding Hackathon, 2024</li>
+                    <li>Volunteered in Tech Workshops</li>
+                </ul>
+                <h2>Hobbies</h2>
+                <p>Coding, Reading, Playing Chess, Exploring Technology</p>
+                <h2>Languages Known</h2>
+                <p>English, Hindi, Spanish (Basic)</p>
+            </div>
+
+            <!-- Bottom row -->
+            <div class="right-bottom">
+                <h2>Personal Profile</h2>
+                <p><strong>Name:</strong> Asish Varma Uppalapati</p>
+                <p><strong>Father’s Name:</strong> Mr. Varma Uppalapati</p>
+                <p><strong>Mother’s Name:</strong> Mrs. S. Uppalapati</p>
+                <p><strong>Date of Birth:</strong> 23 March 2005</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Nationality:</strong> Indian</p>
+
+                <h2>Declaration</h2>
+                <p>
+                    I hereby declare that the information provided above is true and correct to the best of my knowledge.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
