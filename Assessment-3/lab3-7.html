@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Print Numbers 1 to N</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #info {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      input, button {
+        margin: 5px 0;
+        padding: 5px 10px;
+      }
+      #output {
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <label for="nValue">Enter N:</label>
+    <input type="number" id="nValue" step="1" min="1">
+    <button onclick="printNumbers()">Print Numbers</button>
+
+    <div id="output"></div>
+
+    <script>
+      function printNumbers() {
+        var n = parseInt(document.getElementById("nValue").value);
+        if(isNaN(n) || n < 1) {
+          alert("Please enter a valid positive integer!");
+          return;
+        }
+
+        var output = "";
+        var counter = 1;
+
+        while(counter <= n) {
+          output += counter + " ";
+          counter++;
+        }
+
+        document.getElementById("output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rectangle Area Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #info {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      input, button {
+        margin: 5px 0;
+        padding: 5px 10px;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <label for="length">Length:</label>
+    <input type="text" id="length">
+
+    <label for="width">Width:</label>
+    <input type="text" id="width">
+
+    <button onclick="calculateArea()">Calculate Area</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateArea() {
+        var length = document.getElementById("length").value;
+        var width = document.getElementById("width").value;
+
+        // Loose typing: automatically converts string to number
+        var area = length * width;
+
+        document.getElementById("result").innerHTML = 
+          "Area of Rectangle: " + area;
+
+        // Demonstrate with float values
+        var floatLength = parseFloat(length);
+        var floatWidth = parseFloat(width);
+        var floatArea = floatLength * floatWidth;
+
+        document.getElementById("result").innerHTML += 
+          "<br>Area with floating-point numbers: " + floatArea;
+      }
+    </script>
+  </body>
+</html>

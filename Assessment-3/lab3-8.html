@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multiplication Table with Do-While Loop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #info {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      input, button {
+        margin: 5px 0;
+        padding: 5px 10px;
+      }
+      #output {
+        margin-top: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" step="any">
+    <button onclick="printTable()">Print Table</button>
+
+    <div id="output"></div>
+
+    <script>
+      function printTable() {
+        var number = parseFloat(document.getElementById("num").value);
+        if(isNaN(number)) {
+          alert("Please enter a valid number!");
+          return;
+        }
+
+        var counter = 1;
+        var output = "";
+
+        do {
+          output += number + " x " + counter + " = " + (number * counter) + "<br>";
+          counter++;
+        } while(counter <= 10);
+
+        document.getElementById("output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>

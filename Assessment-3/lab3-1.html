@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World Page</title>
+    <style>
+      #info {
+        text-align: left;
+        padding: 10px;
+        font-weight: bold;
+      }
+      #buttonContainer {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      UPPALAPATI ASISH VARMA<br>
+      24BAI0077
+    </div>
+    
+    <div id="buttonContainer">
+      <button onclick="showMessage()">Click Me</button>
+    </div>
+
+    <div id="message"></div>
+
+    <script>
+      function showMessage() {
+        var messageDiv = document.getElementById("message");
+        messageDiv.outerHTML = "<div id='message'>Hello, world!</div>";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Skills Form</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #info { font-weight: bold; margin-bottom: 20px; }
+    input[type="checkbox"] { margin-right: 5px; }
+    #result { margin-top: 20px; font-weight: bold; color: darkgreen; }
+  </style>
+</head>
+<body>
+
+<div id="info">
+  Name: UPPALAPATI ASISH VARMA<br>
+  Roll No: 24BAI0077
+</div>
+
+<form id="skillsForm">
+  <label><input type="checkbox" name="skill" value="JavaScript"> JavaScript</label><br>
+  <label><input type="checkbox" name="skill" value="Python"> Python</label><br>
+  <label><input type="checkbox" name="skill" value="C++"> C++</label><br>
+  <label><input type="checkbox" name="skill" value="HTML/CSS"> HTML/CSS</label><br>
+  <label><input type="checkbox" name="skill" value="SQL"> SQL</label><br>
+  <label><input type="checkbox" name="skill" value="Machine Learning"> Machine Learning</label><br><br>
+
+  <button type="button" onclick="validateSkills()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function validateSkills() {
+  var skills = document.getElementsByName("skill");
+  var selectedSkills = [];
+
+  // Loop through checkboxes
+  for (var i = 0; i < skills.length; i++) {
+    if (skills[i].checked) {
+      selectedSkills.push(skills[i].value);
+    }
+  }
+
+  // Validate at least 3 skills
+  if (selectedSkills.length >= 3) {
+    document.getElementById("result").innerHTML = 
+      "Selected Skills (" + selectedSkills.length + "): " + selectedSkills.join(", ");
+  } else {
+    document.getElementById("result").innerHTML = 
+      "Error: Please select at least 3 skills!";
+  }
+}
+</script>
+
+</body>
+</html>

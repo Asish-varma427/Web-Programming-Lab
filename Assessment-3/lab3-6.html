@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Information System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #info {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      form label {
+        display: block;
+        margin-top: 10px;
+      }
+      input, select, button {
+        margin-top: 5px;
+        padding: 5px;
+      }
+      table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <form id="studentForm">
+      <label for="sname">Student Name:</label>
+      <input type="text" id="sname" name="sname">
+
+      <label for="sid">Student ID:</label>
+      <input type="text" id="sid" name="sid">
+
+      <label for="sage">Age:</label>
+      <input type="number" id="sage" name="sage" step="any">
+
+      <label for="sgrade">Grade:</label>
+      <select id="sgrade" name="sgrade">
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+
+      <div style="margin-top: 10px;">
+        <button type="button" onclick="addStudent()">Add Student</button>
+        <button type="button" onclick="resetForm()">Reset Form</button>
+      </div>
+    </form>
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Age</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      // Global array to store student objects
+      var students = [];
+
+      // Student constructor
+      function Student(name, id, age, grade) {
+        this.name = name;
+        this.id = id;
+        this.age = age;
+        this.grade = grade;
+        this.getInfo = function() {
+          return this.name + " (" + this.id + ") - Age: " + this.age + ", Grade: " + this.grade;
+        };
+      }
+
+      function addStudent() {
+        var form = document.getElementById("studentForm");
+        var name = form.elements["sname"].value;
+        var id = form.elements["sid"].value;
+        var age = form.elements["sage"].value;
+        var grade = form.elements["sgrade"].value;
+
+        if(name === "" || id === "" || age === "") {
+          alert("Please fill all fields!");
+          return;
+        }
+
+        // Create student object and push to array
+        var student = new Student(name, id, age, grade);
+        students.push(student);
+
+        // Update table dynamically
+        updateTable();
+
+        // Reset form and set focus to name
+        form.reset();
+        form.elements["sname"].focus();
+      }
+
+      function updateTable() {
+        var tbody = document.getElementById("studentTable").getElementsByTagName("tbody")[0];
+        tbody.innerHTML = ""; // Clear previous rows
+
+        for(var i = 0; i < students.length; i++) {
+          var row = tbody.insertRow();
+          row.insertCell(0).innerHTML = students[i].name;
+          row.insertCell(1).innerHTML = students[i].id;
+          row.insertCell(2).innerHTML = students[i].age;
+          row.insertCell(3).innerHTML = students[i].grade;
+        }
+      }
+
+      function resetForm() {
+        var form = document.getElementById("studentForm");
+        form.reset();
+        form.elements["sname"].focus();
+      }
+    </script>
+  </body>
+</html>

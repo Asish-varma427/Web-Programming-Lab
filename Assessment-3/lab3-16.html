@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overlapping Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Name and Roll Number at top-left */
+        .header-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 999;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .gallery {
+            position: relative;
+            width: 900px;
+            height: 500px;
+            margin: 80px auto 40px auto; /* leave space for header */
+            border: 2px solid #ccc;
+            background-color: #fff;
+            overflow: visible;
+        }
+
+        .gallery img {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 40px 0;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ccc;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Name and Roll Number -->
+<div class="header-info">
+    Name: Asish Varma Uppalapati <br>
+    Roll No: 24BAI0077
+</div>
+
+<h1>Overlapping Image Gallery</h1>
+
+<div class="gallery">
+    <img src="https://picsum.photos/id/1011/200/200" style="top: 20px; left: 20px; z-index: 1;">
+    <img src="https://picsum.photos/id/1012/200/200" style="top: 50px; left: 100px; z-index: 2;">
+    <img src="https://picsum.photos/id/1013/200/200" style="top: 100px; left: 200px; z-index: 3;">
+    <img src="https://picsum.photos/id/1015/200/200" style="top: 150px; left: 300px; z-index: 4;">
+    <img src="https://picsum.photos/id/1016/200/200" style="top: 180px; left: 400px; z-index: 5;">
+</div>
+
+<div class="contact-info">
+    <h2>Contact Info</h2>
+    <p>Name: Asish Varma Uppalapati</p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+    <p>Email: example@example.com</p>
+</div>
+
+<script>
+    let topZIndex = 5; // Highest initial z-index
+
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            img.style.zIndex = ++topZIndex; // Bring clicked image to front
+        });
+    });
+</script>
+
+</body>
+</html>

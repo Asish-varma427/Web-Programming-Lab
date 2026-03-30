@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background Color Changer</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      #info {
+        text-align: left;
+        padding: 10px;
+        font-weight: bold;
+      }
+      #buttons {
+        margin-top: 20px;
+        padding-left: 10px;
+      }
+      #buttons button {
+        margin-right: 10px;
+        padding: 10px 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <div id="buttons">
+      <button type="button" onclick="changeColor('red')">Red</button>
+      <button type="button" onclick="changeColor('green')">Green</button>
+      <button type="button" onclick="changeColor('blue')">Blue</button>
+    </div>
+
+    <script>
+      function changeColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>

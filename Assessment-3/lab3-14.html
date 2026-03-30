@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Styling App</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        fieldset {
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid white;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        /* Predefined CSS Classes */
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .smallcaps {
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+
+<body>
+<div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+
+<h2>Text Styling Application</h2>
+
+<!-- Message -->
+<p id="text">This is a sample text</p>
+
+<!-- Controls -->
+<fieldset>
+    <legend>Text Styles</legend>
+
+    <button onclick="applyStyle('bold')">Bold</button>
+    <button onclick="applyStyle('italic')">Italic</button>
+    <button onclick="applyStyle('smallcaps')">Small Caps</button>
+    <button onclick="clearStyle()">Clear</button>
+</fieldset>
+
+<script>
+
+function applyStyle(style) {
+    let text = document.getElementById("text");
+
+    // Add multiple classes using className
+    text.className += " " + style;
+}
+
+function clearStyle() {
+    document.getElementById("text").className = "";
+}
+
+</script>
+
+</body>
+</html>

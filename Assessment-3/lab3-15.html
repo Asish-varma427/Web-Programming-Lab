@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Customization Tool</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        fieldset {
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid white;
+        }
+
+        #text {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+ <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+
+<h2>Dynamic Font Customization Tool</h2>
+
+<!-- Text -->
+<div id="text">Customize Me!</div>
+
+<!-- Controls -->
+<fieldset>
+    <legend>Font Controls</legend>
+
+    <!-- Font Size -->
+    <label>Font Size: </label>
+    <input type="range" id="size" min="10" max="50" value="20" oninput="changeStyle()">
+    <span id="sizeValue">20</span> px
+    <br><br>
+
+    <!-- Text Color -->
+    <label>Text Color: </label>
+    <input type="color" id="textColor" value="#ffffff" onchange="changeStyle()">
+    <br><br>
+
+    <!-- Background Color -->
+    <label>Background Color: </label>
+    <input type="color" id="bgColor" value="#000000" onchange="changeStyle()">
+
+</fieldset>
+
+<script>
+
+function changeStyle() {
+
+    let text = document.getElementById("text");
+
+    let size = document.getElementById("size").value;
+    let color = document.getElementById("textColor").value;
+    let bg = document.getElementById("bgColor").value;
+
+    // Show current size
+    document.getElementById("sizeValue").innerHTML = size;
+
+    // Apply styles dynamically
+    text.style.fontSize = size + "px";
+    text.style.color = color;
+    text.style.backgroundColor = bg;
+}
+
+</script>
+
+</body>
+</html>

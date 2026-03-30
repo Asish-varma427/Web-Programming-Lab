@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Interest Calculator</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #info { font-weight: bold; margin-bottom: 20px; }
+    input, button { margin: 5px 0; padding: 5px 10px; }
+    #result { margin-top: 20px; font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+
+<div id="info">
+  Name: UPPALAPATI ASISH VARMA<br>
+  Roll No: 24BAI0077
+</div>
+
+<label for="principal">Principal (P):</label>
+<input type="number" id="principal" step="any"><br>
+
+<label for="rate">Rate (R):</label>
+<input type="number" id="rate" step="any"><br>
+
+<label for="time">Time (T):</label>
+<input type="number" id="time" step="any"><br>
+
+<button onclick="showSI()">Calculate Simple Interest</button>
+
+<div id="result"></div>
+
+<script>
+  // Function to calculate SI
+  function calculateSI(principal, rate, time) {
+    return (principal * rate * time) / 1; // formula SI = P * R * T / 1
+  }
+
+  // Function to read inputs, calculate and display result
+  function showSI() {
+    var principal = parseFloat(document.getElementById("principal").value);
+    var rate = parseFloat(document.getElementById("rate").value);
+    var time = parseFloat(document.getElementById("time").value);
+
+    if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+      alert("Please enter valid numbers for all fields!");
+      return;
+    }
+
+    var si = calculateSI(principal, rate, time);
+
+    document.getElementById("result").innerHTML = "Simple Interest = " + si;
+
+    // Optional: reset inputs and focus back to Principal
+    document.getElementById("principal").value = "";
+    document.getElementById("rate").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("principal").focus();
+  }
+</script>
+
+</body>
+</html>

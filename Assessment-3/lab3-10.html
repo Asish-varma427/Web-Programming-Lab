@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkbox Selection Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #info {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Name: UPPALAPATI ASISH VARMA<br>
+      Roll No: 24BAI0077
+    </div>
+
+    <form id="subjectForm">
+      <input type="checkbox" name="subject" value="Math" id="math">
+      <label for="math">Math</label>
+
+      <input type="checkbox" name="subject" value="Physics" id="physics">
+      <label for="physics">Physics</label>
+
+      <input type="checkbox" name="subject" value="Chemistry" id="chemistry">
+      <label for="chemistry">Chemistry</label>
+
+      <input type="checkbox" name="subject" value="Biology" id="biology">
+      <label for="biology">Biology</label>
+
+      <br><br>
+      <button type="button" onclick="countSelected()">Count Selected Subjects</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      function countSelected() {
+        var subjects = document.getElementsByName("subject");
+        var selectedSubjects = [];
+        var count = 0;
+
+        for(var i = 0; i < subjects.length; i++) {
+          if(subjects[i].checked) {
+            selectedSubjects.push(subjects[i].value);
+            count++;
+          }
+        }
+
+        if(count > 0) {
+          document.getElementById("result").innerHTML = 
+            "Selected Subjects (" + count + "): " + selectedSubjects.join(", ");
+        } else {
+          document.getElementById("result").innerHTML = "No subjects selected!";
+        }
+      }
+    </script>
+  </body>
+</html>
