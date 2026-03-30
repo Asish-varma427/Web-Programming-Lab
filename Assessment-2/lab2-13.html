@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickEats Food Delivery</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { line-height: 1.6; }
+
+header {
+    background-color: #ff4757;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+header h1 { font-size: 2.5em; }
+header p { font-size: 1.2em; margin-top: 5px; }
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffa502;
+}
+nav a {
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover { background-color: #ff7f50; }
+
+.welcome {
+    background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.welcome h2 { font-size: 2.5em; margin-bottom: 20px; }
+.welcome p { font-size: 1.2em; margin-bottom: 30px; }
+.welcome button {
+    padding: 15px 30px;
+    font-size: 1em;
+    background-color: #ff6b81;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.welcome button:hover { background-color: #ff4757; }
+
+.categories, .menu, .contact { padding: 50px 20px; text-align: center; }
+.categories h2, .menu h2, .contact h2 { font-size: 2em; margin-bottom: 40px; }
+
+.category-grid, .menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.category-card, .menu-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    background-color: white;
+}
+.category-card:hover, .menu-card:hover { transform: scale(1.05); }
+.category-card img, .menu-card img { width: 100%; height: 150px; object-fit: cover; }
+.category-card h3, .menu-card h3 { margin: 10px 0; }
+.category-card p, .menu-card p { padding: 0 10px 10px 10px; }
+
+.menu-card span { display: block; margin: 10px 0; font-weight: bold; }
+.menu-card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.menu-card button:hover { background-color: #ff4757; }
+
+.contact p { margin: 10px 0; }
+.contact a { color: #ff6b81; text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+
+footer {
+    background-color: #2f3542;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>QuickEats Food Delivery</h1>
+    <p>Delicious meals delivered fast at your doorstep!</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Order Online</a>
+    <a href="#">Contact Us</a>
+</nav>
+
+<section class="welcome">
+    <h2>Delicious Food Delivered to Your Doorstep</h2>
+    <p>We bring your favorite meals from top restaurants straight to you, hot and fresh.</p>
+    <button>Order Now</button>
+</section>
+
+<section class="categories">
+    <h2>Our Food Categories</h2>
+    <div class="category-grid">
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1601924582971-7e497d85f8c3?auto=format&fit=crop&w=600&q=80" alt="Pizza">
+            <h3>Pizza</h3>
+            <p>Cheesy, delicious, and baked to perfection.</p>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Burgers">
+            <h3>Burgers</h3>
+            <p>Juicy burgers with fresh ingredients and sauces.</p>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1608033219242-dfed6b593f70?auto=format&fit=crop&w=600&q=80" alt="Biryani">
+            <h3>Biryani</h3>
+            <p>Fragrant, flavorful rice dishes with tender meat.</p>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1599785209797-d6c5cb4170f4?auto=format&fit=crop&w=600&q=80" alt="Desserts">
+            <h3>Desserts</h3>
+            <p>Sweet treats to satisfy your cravings.</p>
+        </div>
+    </div>
+</section>
+
+<section class="menu">
+    <h2>Popular Dishes</h2>
+    <div class="menu-grid">
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1601924582971-7e497d85f8c3?auto=format&fit=crop&w=600&q=80" alt="Margherita Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>Classic pizza with fresh mozzarella, tomatoes, and basil.</p>
+            <span>Price: $8.99</span>
+            <button>Order Now</button>
+        </div>
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Cheeseburger">
+            <h3>Cheeseburger</h3>
+            <p>Grilled beef patty with cheddar cheese, lettuce, and tomato.</p>
+            <span>Price: $6.99</span>
+            <button>Order Now</button>
+        </div>
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1608033219242-dfed6b593f70?auto=format&fit=crop&w=600&q=80" alt="Chicken Biryani">
+            <h3>Chicken Biryani</h3>
+            <p>Spiced rice with tender chicken and aromatic herbs.</p>
+            <span>Price: $10.99</span>
+            <button>Order Now</button>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: +91-9876543210</p>
+    <p>Email: <a href="mailto:contact@quickeats.com">contact@quickeats.com</a></p>
+    <p>Location: 123 Food Street, City, India</p>
+    <p>Follow us on <a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Twitter</a></p>
+</section>
+
+<footer>
+    <p>© 2026 QuickEats Food Delivery | All rights reserved</p>
+</footer>
+
+</body>
+</html>

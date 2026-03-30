@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Portal</title>
+
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .student-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-top: 60px;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .nav a {
+            background-color: darkblue;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .section {
+            background-color: darkblue;
+            color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            color: darkblue;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="student-info">
+        Uppalapati Asish Varma <br>
+        24BAI0077
+    </div>
+
+    <h1>Student Registration Portal</h1>
+
+    <div class="nav">
+        <a href="#personal">Personal Information</a>
+        <a href="#academic">Academic Details</a>
+        <a href="#address">Address Information</a>
+        <a href="#account">Account Credentials</a>
+    </div>
+
+    <form onsubmit="alert('Form Submitted Successfully')">
+
+        <div id="personal" class="section">
+            <h2>Personal Information</h2>
+
+            Full Name:
+            <input type="text">
+
+            Date of Birth:
+            <input type="date">
+
+            Gender:
+            <select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            Email Address:
+            <input type="email">
+
+            Mobile Number:
+            <input type="text">
+        </div>
+
+        <div id="academic" class="section">
+            <h2>Academic Details</h2>
+
+            Register Number:
+            <input type="text">
+
+            Degree Program:
+            <input type="text">
+
+            Department:
+            <input type="text">
+
+            Year of Study:
+            <input type="text">
+        </div>
+
+        <div id="address" class="section">
+            <h2>Address Information</h2>
+
+            Door Number:
+            <input type="text">
+
+            Street Name:
+            <input type="text">
+
+            City:
+            <input type="text">
+
+            State:
+            <input type="text">
+
+            Pincode:
+            <input type="text">
+        </div>
+
+        <div id="account" class="section">
+            <h2>Account Credentials</h2>
+
+            Username:
+            <input type="text">
+
+            Password:
+            <input type="password">
+
+            Confirm Password:
+            <input type="password">
+        </div>
+
+        <div class="submit">
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
